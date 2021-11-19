@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon Rooms/1Start.unity
     guid: 5faaef17cd9aeed46bc27c3603b29bb9
   - enabled: 1
-    path: Assets/Scenes/Dungeon Rooms/!End.unity
+    path: Assets/Scenes/Dungeon Rooms/1End.unity
     guid: 76cdb1bd8030dc44cbc69971e9c47801
   m_configObjects: {}
