@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-
     public int Width;
     public int Height;
     public int X;
     public int Y;
+
+    private bool updatedDoors = false;
+
+    public Room(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
 
     public Door leftDoor;
     public Door rightDoor;
@@ -19,17 +26,17 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(RoomController.instance == null)
+        if (RoomController.instance == null)
         {
             Debug.Log("You pressed play in the wrong scene!");
             return;
         }
 
         Door[] ds = GetComponentsInChildren<Door>();
-        foreach(Door d in ds)
+        foreach (Door d in ds)
         {
             doors.Add(d);
-            switch(d.doorType)
+            switch (d.doorType)
             {
                 case Door.DoorType.right:
                     rightDoor = d;
@@ -46,14 +53,24 @@ public class Room : MonoBehaviour
             }
         }
 
+        //objectName = gameObject.name;
         RoomController.instance.RegisterRoom(this);
+    }
+
+    void Update()
+    {
+        if (name.Contains("End") && !updatedDoors)
+        {
+            RemoveUnconnectedDoors();
+            updatedDoors = true;
+        }
     }
 
     public void RemoveUnconnectedDoors()
     {
-        foreach(Door door in doors)
+        foreach (Door door in doors)
         {
-            switch(door.doorType)
+            switch (door.doorType)
             {
                 case Door.DoorType.right:
                     if (GetRight() == null)
@@ -77,7 +94,7 @@ public class Room : MonoBehaviour
 
     public Room GetRight()
     {
-        if(RoomController.instance.DoesRoomExist(X+1, Y))
+        if (RoomController.instance.DoesRoomExist(X + 1, Y))
         {
             return RoomController.instance.FindRoom(X + 1, Y);
         }
@@ -122,5 +139,12 @@ public class Room : MonoBehaviour
         return new Vector3(X * Width, Y * Height);
     }
 
+    //public static void ChildCountActive()
+    //{
+        
+    //    //var roomClass = new Room();
+    //    int childCount = gameObject.transform.childCount;
+    //    Debug.Log(objectName + ": " + childCount);
+    //}
     //button for scene change go here
 }
