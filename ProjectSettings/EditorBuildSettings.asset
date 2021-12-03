@@ -78,6 +78,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon Rooms/6thFloor/6Start.unity
     guid: b54e63e7bb551ed4fb5b9ae43d30d70e
   - enabled: 1
-    path: Assets/Scenes/CombatScenes/Combat Scene.unity
+    path: Assets/Scenes/CombatScenes/1Combat.unity
     guid: 32f6cfe6d835dcc4c859292f980457dc
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/1Boss.unity
+    guid: 4604405aaf8189544bfd65f9a10c19ca
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/Rewards.unity
+    guid: 402cf4bfcf32d4140948b760329695a6
   m_configObjects: {}

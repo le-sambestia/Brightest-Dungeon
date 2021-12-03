@@ -48,7 +48,7 @@ MonoBehaviour:
   unitLevel: 5
   maxDamage: 10
   currentDamage: 10
-  magic: 5
+  magic: 10
   maxHP: 25
   currentHP: 25
 --- !u!1 &2427806500713594889

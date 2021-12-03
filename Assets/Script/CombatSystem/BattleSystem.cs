@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -63,7 +64,7 @@ public class BattleSystem : MonoBehaviour
         if(isDead)
         {
             state = BattleState.WON;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -84,7 +85,7 @@ public class BattleSystem : MonoBehaviour
         if(isDead)
         {
             state = BattleState.LOST;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -94,15 +95,21 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    void EndBattle()
+    IEnumerator EndBattle()
     {
         if(state == BattleState.WON)
         {
             dialogueText.text = "You Won";
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("Rewards",LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
         }
         else if(state == BattleState.LOST)
         {
             dialogueText.text = "You lost";
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("Rewards");
+            SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
         }
     }
 

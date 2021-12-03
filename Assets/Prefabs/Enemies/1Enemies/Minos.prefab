@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8384310244363598545}
-  - component: {fileID: 8384310244363598544}
+  - component: {fileID: 5852145769872215251}
   m_Layer: 0
-  m_Name: Agitator
+  m_Name: Minos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8384310244363598544
+--- !u!114 &5852145769872215251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168d2aa0e2946454b8338607f1bf6e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Agitator
-  unitLevel: 2
-  maxDamage: 7
-  currentDamage: 7
-  magic: 5
-  maxHP: 35
-  currentHP: 35
+  unitName: Minos
+  unitLevel: 5
+  maxDamage: 15
+  currentDamage: 15
+  magic: 0
+  maxHP: 55
+  currentHP: 55
 --- !u!1 &8384310245178873956
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 8c2471b7730363446807b8ef8dc6a21b, type: 3}
-  m_Color: {r: 0.9245283, g: 0.31835172, b: 0.31835172, a: 1}
+  m_Color: {r: 0.3054467, g: 0.6792453, b: 0.34944794, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

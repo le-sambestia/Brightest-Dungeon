@@ -1233,9 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2427806499885605507, guid: d1e4344fcb5e9f84c9da8832feefc31f, type: 3}
   enemyList:
-  - {fileID: 8384310244363598574, guid: daa497fc49de75643b3baad09620d3f9, type: 3}
-  - {fileID: 8384310244363598574, guid: f67bc8605538e6c4785538f889a3c954, type: 3}
-  - {fileID: 8384310244363598574, guid: 91b0166a5011e2c439c36b0c704a1e9a, type: 3}
+  - {fileID: 8384310244363598574, guid: 874cdb5d3ac9afe4fb902d2a400c9a7a, type: 3}
   playerBattleStation: {fileID: 1624050091}
   enemyBattleStation: {fileID: 1695494577}
   dialogueText: {fileID: 1549537283}
