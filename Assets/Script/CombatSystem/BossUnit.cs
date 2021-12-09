@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class BossUnit : MonoBehaviour
 {
 
     public string unitName;
@@ -10,8 +10,7 @@ public class Unit : MonoBehaviour
 
     public int maxDamage;
     public int currentDamage;
-    public int maxMagic;
-    public int currentMagic;
+    public int magic;
 
     public int maxHP;
     public int currentHP;

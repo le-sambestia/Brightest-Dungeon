@@ -12,6 +12,7 @@ public class BattleSystem : MonoBehaviour
     GameObject enemyPrefab;
     public GameObject[] enemyList;
     int randomEnemy;
+    public bool isBoss;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -23,6 +24,8 @@ public class BattleSystem : MonoBehaviour
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
+
+    public GameObject fireButton;
 
     public BattleState state;
     // Start is called before the first frame update
@@ -47,6 +50,11 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
+        if(RandomItems.fireMagicActive == true)
+        {
+            fireButton.SetActive(true);
+        }
+
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERTURN;
@@ -62,6 +70,26 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         if(isDead)
+        {
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    IEnumerator PlayerFire()
+    {
+        bool isDead = enemyUnit.TakeDamage(playerUnit.currentMagic);
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        dialogueText.text = "The enemy took " + playerUnit.currentMagic + " damage";
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
         {
             state = BattleState.WON;
             StartCoroutine(EndBattle());
@@ -120,7 +148,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(playerUnit.magic);
+        playerUnit.Heal(playerUnit.currentMagic);
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = "You have been healed";
 
@@ -163,5 +191,13 @@ public class BattleSystem : MonoBehaviour
             return;
 
         StartCoroutine(PlayerDefend());
+    }
+
+    public void OnFireButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(PlayerFire());
     }
 }
