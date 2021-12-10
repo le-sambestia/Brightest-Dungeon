@@ -127,17 +127,37 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
-            dialogueText.text = "You Won";
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene("Rewards",LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
+            if(isBoss ==false)
+            {
+                dialogueText.text = "You Won";
+                yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene("Rewards", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
+            }
+            else if (isBoss == true)
+            {
+                dialogueText.text = "You Beat the Floor Boss";
+                yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene("Boss Rewards", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Boss");
+            }
         }
         else if(state == BattleState.LOST)
         {
-            dialogueText.text = "You lost";
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene("Rewards");
-            SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
+            if (isBoss == false)
+            {
+                dialogueText.text = "You lost";
+                yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene("Rewards", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
+            }
+            else if (isBoss == true)
+            {
+                dialogueText.text = "You Beat the Floor Boss";
+                yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene("Boss Rewards", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Boss");
+            }
         }
     }
 

@@ -27,4 +27,12 @@ public class SceneChange : MonoBehaviour
         room  = GameManager.RoomCont;
         room.SetActive(true);
     }
+
+    public void LoadNextArea()
+    {
+        int x = int.Parse(RoomController.instance.currentWorldName);
+        x += 1;
+        RoomController.instance.currentWorldName = x.ToString();
+        SceneManager.LoadScene(RoomController.instance.currentWorldName + "Main");
+    }
 }

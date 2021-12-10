@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
-
+    
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;

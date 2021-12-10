@@ -12,14 +12,18 @@ public class RandomItems : MonoBehaviour
     public Transform spawn;
 
     public static bool fireMagicActive = false;
-
+    PlayerUnit prefab;
     Item chosenItem;
     Unit player;
+
 
     public Text itemText;
 
     public void Start()
     {
+        GameObject sdinky = (GameObject)Resources.Load("Player");
+        prefab = sdinky.GetComponent<PlayerUnit>();
+
         randomItem = Random.Range(0, itemList.Count);
         itemPrefab = itemList[randomItem];
         GameObject playerGO = Instantiate(itemPrefab, spawn);
@@ -49,11 +53,15 @@ public class RandomItems : MonoBehaviour
                 GetWeirdPotion();
                 break;
         }
+
+        prefab.currentDamage = prefab.maxDamage;
+        prefab.currentMagic = prefab.maxMagic;
+        prefab.currentHP = prefab.maxHP;
     }
 
     void GetStick()
     {
-        player.maxDamage += 5;
+        prefab.maxDamage += 5;
     }
     void GetFireMagic()
     {
@@ -61,18 +69,18 @@ public class RandomItems : MonoBehaviour
     }
     void GetBigStick()
     {
-        player.maxDamage += 7;
+        prefab.maxDamage += 7;
     }
     void GetBiggerStick()
     {
-        player.maxDamage += 12;
+        prefab.maxDamage += 12;
     }
     void GetDetermination()
     {
-        player.maxMagic += 5;
+        prefab.maxMagic += 5;
     }
     void GetWeirdPotion()
     {
-        player.maxHP += 5;
+        prefab.maxHP += 5;
     }
 }
