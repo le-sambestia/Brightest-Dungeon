@@ -14,6 +14,8 @@ public class BattleSystem : MonoBehaviour
     int randomEnemy;
     public bool isBoss;
 
+
+
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
@@ -31,6 +33,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         randomEnemy = Random.Range(0, enemyList.Length);
         enemyPrefab = enemyList[randomEnemy];
         state = BattleState.START;
@@ -63,13 +66,15 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
+        playerUnit.animator.SetBool("IsAttacking", true);
         bool isDead = enemyUnit.TakeDamage(playerUnit.currentDamage);
         enemyHUD.SetHP(enemyUnit.currentHP);
         dialogueText.text = "The enemy took " + playerUnit.currentDamage + " damage";
 
         yield return new WaitForSeconds(2f);
+        playerUnit.animator.SetBool("IsAttacking", false);
 
-        if(isDead)
+        if (isDead)
         {
             state = BattleState.WON;
             StartCoroutine(EndBattle());
@@ -104,7 +109,9 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.unitName + " attacks for " + enemyUnit.currentDamage;
-        yield return new WaitForSeconds(1f);
+        enemyUnit.animator.SetBool("IsAttacking", true);
+        yield return new WaitForSeconds(2f);
+        enemyUnit.animator.SetBool("IsAttacking", false);
         bool isDead = playerUnit.TakeDamage(enemyUnit.currentDamage);
 
         playerHUD.SetHP(playerUnit.currentHP);
@@ -129,6 +136,7 @@ public class BattleSystem : MonoBehaviour
         {
             if(isBoss ==false)
             {
+                enemyUnit.animator.SetBool("IsDead", true);
                 dialogueText.text = "You Won";
                 yield return new WaitForSeconds(3f);
                 SceneManager.LoadScene("Rewards", LoadSceneMode.Additive);
@@ -136,6 +144,7 @@ public class BattleSystem : MonoBehaviour
             }
             else if (isBoss == true)
             {
+                enemyUnit.animator.SetBool("IsDead", true);
                 dialogueText.text = "You Beat the Floor Boss";
                 yield return new WaitForSeconds(3f);
                 SceneManager.LoadScene("Boss Rewards", LoadSceneMode.Additive);
@@ -146,17 +155,17 @@ public class BattleSystem : MonoBehaviour
         {
             if (isBoss == false)
             {
+                playerUnit.animator.SetBool("IsDead", true);
                 dialogueText.text = "You lost";
                 yield return new WaitForSeconds(3f);
-                SceneManager.LoadScene("Rewards", LoadSceneMode.Additive);
-                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Combat");
+                SceneManager.LoadScene("FailScreen");
             }
             else if (isBoss == true)
             {
+                playerUnit.animator.SetBool("IsDead", false);
                 dialogueText.text = "You Beat the Floor Boss";
                 yield return new WaitForSeconds(3f);
-                SceneManager.LoadScene("Boss Rewards", LoadSceneMode.Additive);
-                SceneManager.UnloadSceneAsync(RoomController.instance.currentWorldName + "Boss");
+                SceneManager.LoadScene("FailScreen");
             }
         }
     }

@@ -30,7 +30,7 @@ public class RandomItems : MonoBehaviour
         chosenItem = playerGO.GetComponent<Item>();
         itemList.RemoveAt(randomItem);
 
-        itemText.text = "You got " + chosenItem.itemName + "\n" + chosenItem.itemDesc;
+        itemText.text = "You got " + chosenItem.itemName + "\n" + chosenItem.itemDesc + "\n" + chosenItem.itemEffect;
 
         switch(randomItem)
         {

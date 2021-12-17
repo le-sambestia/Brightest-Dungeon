@@ -13,9 +13,16 @@ public class Unit : MonoBehaviour
     public int maxMagic;
     public int currentMagic;
 
+    public Animator animator;
+
     public int maxHP;
     public int currentHP;
-    
+
+    void Start()
+    {
+        animator = animator == null ? GetComponent<Animator>() : animator;
+    }
+
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;

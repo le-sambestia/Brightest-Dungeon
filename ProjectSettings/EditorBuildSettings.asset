@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ec266b8f826a2a64bbc7695f65503730
+  - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/1stFloor/1Main.unity
     guid: 0a764070bc509cc41a104e6601d0247f
   - enabled: 1
@@ -28,7 +31,7 @@ EditorBuildSettings:
     guid: 0daac0bddab02724f943d99ef06ecfca
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/2ndFloor/2Start.unity
-    guid: d64bb9de3dea341478995b6b385e39ff
+    guid: 06a6a395ecf6adf4b8111f0185175c85
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/3rdFloor/3Empty.unity
     guid: 727c671808da53f4bb2e231cc7768421
@@ -40,7 +43,7 @@ EditorBuildSettings:
     guid: a4cc42e0981c1484b88d4130f1fc835a
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/3rdFloor/3Start.unity
-    guid: 001593e23c038ee4595a49edd7a25888
+    guid: 9c8067704f1f16545b0045c5fda8020d
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/4thFloor/4Empty.unity
     guid: 4f9f50a70cd2ca34bb9ab01484406b91
@@ -52,7 +55,7 @@ EditorBuildSettings:
     guid: 794f993eaab02cc47b96e7f3bcb9d52c
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/4thFloor/4Start.unity
-    guid: acbec9d03bc4d884588f8cfe8b729b99
+    guid: 168987ea0cf9b2c4d93e53d3bf7e9968
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/5thFloor/5Empty.unity
     guid: db0a72e0898162f428399efd8fadf65f
@@ -64,7 +67,7 @@ EditorBuildSettings:
     guid: fe6f3c19e5aac6b4e9e21e6d936be88f
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/5thFloor/5Start.unity
-    guid: d333bfa6cb8fce241a6f073a9e8ff5d9
+    guid: 3857f10bbae716b41949bc4966952fa2
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/6thFloor/6Empty.unity
     guid: f1c6542c04c9a2f42b8b77a5e6897b48
@@ -76,7 +79,7 @@ EditorBuildSettings:
     guid: dd61c5bde38889948af15a7ffdfa154b
   - enabled: 1
     path: Assets/Scenes/Dungeon Rooms/6thFloor/6Start.unity
-    guid: b54e63e7bb551ed4fb5b9ae43d30d70e
+    guid: d0482c7d114dfff40bb676b7449224ed
   - enabled: 1
     path: Assets/Scenes/CombatScenes/1stFloor/1Combat.unity
     guid: 32f6cfe6d835dcc4c859292f980457dc
@@ -90,9 +93,42 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScenes/2ndFloor/2Boss.unity
     guid: fc2ac97f462fd204d90555921397c0b2
   - enabled: 1
+    path: Assets/Scenes/CombatScenes/3rdFloor/3Boss.unity
+    guid: 2b165cbd17e74c845805e680206cf4b5
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/3rdFloor/3Combat.unity
+    guid: 93173f92143e9ed46abf74d0cce77357
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/4thFloor/4Boss.unity
+    guid: 403b25565e7437f409803067cc24e8b4
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/4thFloor/4Combat.unity
+    guid: 595fc9d6e334fa743a83271fc4b2ede4
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/5thFloor/5Boss.unity
+    guid: 1496f700067f6e649850d94df15dc11d
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/5thFloor/5Combat.unity
+    guid: 1acf22146805c2148b6c367f0f034450
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/6thFloor/6Boss.unity
+    guid: ff6e886885c9b2344b6db50af635147d
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/6thFloor/6Combat.unity
+    guid: 02b766566d68c98478c140c0e629ba3e
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/7thFloor/7Boss.unity
+    guid: 28d9c609208c1844d957aac256f9028a
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/7thFloor/7Combat.unity
+    guid: afcd2991d0e0e0f418d5c995289245c2
+  - enabled: 1
     path: Assets/Scenes/CombatScenes/Rewards.unity
     guid: 402cf4bfcf32d4140948b760329695a6
   - enabled: 1
     path: Assets/Scenes/CombatScenes/Boss Rewards.unity
     guid: 5d1f7750a16161d45b8a9b347d3a847b
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/FailScreen.unity
+    guid: fac303d98cb11e545b18ec93714ec255
   m_configObjects: {}

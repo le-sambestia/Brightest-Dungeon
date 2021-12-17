@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8384310244363598545}
   - component: {fileID: 8384310244363598544}
   m_Layer: 0
-  m_Name: Infector
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,11 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168d2aa0e2946454b8338607f1bf6e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Infector
+  unitName: Eye
   unitLevel: 2
   maxDamage: 15
   currentDamage: 15
-  magic: 5
+  maxMagic: 0
+  currentMagic: 0
+  animator: {fileID: 5756302106470148270}
   maxHP: 15
   currentHP: 15
 --- !u!1 &8384310245178873956
@@ -61,6 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8384310245178873959}
   - component: {fileID: 8384310245178873958}
+  - component: {fileID: 5756302106470148270}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -76,8 +79,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8384310245178873956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: -1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 8384310244363598545}
   m_RootOrder: 0
@@ -122,8 +125,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 8c2471b7730363446807b8ef8dc6a21b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -4795363162621231457, guid: 031d9ae1bb6cba242a3bb8fa672ed20a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,3 +136,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5756302106470148270
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384310245178873956}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32091b181f3247f428056ada3e2ef444, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
